@@ -15,8 +15,8 @@ import requests
 
 # Set Your Bot Token dude 
 TOKEN = 'YOUR_BOT_TOKEN'
-RAM_LIMIT = '2g' #Set Your Own Ram How Much You Want To Give Your Users
-SERVER_LIMIT = 2 #you can change it!
+RAM_LIMIT = '124g' #Set Your Own Ram How Much You Want To Give Your Users
+SERVER_LIMIT = 450 #you can change it!
 database_file = 'database.txt'
 
 intents = discord.Intents.default()
@@ -457,7 +457,7 @@ async def create_server_task(interaction):
 
     try:
         container_id = subprocess.check_output([
-           "docker", "run", "-itd", "--privileged", "--hostname", "crashcloud", "--cap-add=ALL", image
+           "docker", "run", "-itd", "--privileged", "--hostname", "pandacloud", "--cap-add=ALL", image
         ]).strip().decode('utf-8')
     except subprocess.CalledProcessError as e:
         await interaction.followup.send(embed=discord.Embed(description=f"### Error creating Docker container: {e}", color=0xff0000))
